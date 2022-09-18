@@ -1,6 +1,6 @@
 # Fralacticus Chercheur Image
 
-Ce programme permet d'extraire toutes les images (sprites et background) du jeu DBZ Buu's Fury au format bitmap indexé avec les bonnes palettes.
+Ce programme permet d'extraire (ripper) toutes les images aussi bien sprites que backgrounds du jeu DBZ Buu's Fury au format bitmap indexé avec les bonnes palettes.
 
 # Préparation
 
