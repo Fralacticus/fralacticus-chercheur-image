@@ -2,6 +2,8 @@
 
 Ce programme permet d'extraire (ripper) toutes les images aussi bien sprites que backgrounds du jeu DBZ Buu's Fury au format bitmap indexé avec les bonnes palettes.
 
+![](assets/2022-09-18-19-16-32-image.png)
+
 # Préparation
 
 Système d'exploitation : Windows 10 ou supérieur
@@ -60,8 +62,6 @@ Exemple : ./Images/2048/sprite-dim_2048(32x64)-i_3884-adr_3fe8c4.bmp
 
 Dans la rom seule l'information de dimension totale est indiquée, donc chaque image est reconstruite en autant d'exemplaires que de ratio largeur x hauteur possibles pour cette dimension. 
 Or pour chaque image un seul ratio est correct et il faut le trouver visuellement.
-
-
 
 Analyse d'une image dans le dossier **./Images/2048** :
 
