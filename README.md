@@ -18,7 +18,7 @@ Espace disque libre nécessaire : 150 mo
 
 ## Placement de la rom du jeu
 
-La rom doit être placée dans le dossier existant **./Sources** avec le nom **buus_fury.gba**
+Votre propre rom doit être placée dans le dossier existant **./Sources** avec le nom **buus_fury.gba**
 
 # Exécution et utilisation
 
