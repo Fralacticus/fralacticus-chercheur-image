@@ -1,0 +1,22 @@
+# Files and directories created by pub.
+.dart_tool/
+.packages
+
+# Conventional directory for build output.
+build/
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Files created by app
+Infos/*
+Decomp/*
+Images/*
+
+# Files used to debug
+lancer_compilation.bat
+fralacticus_chercheur_image.exe
+Sources/buus_fury.gba

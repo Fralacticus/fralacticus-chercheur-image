@@ -1,0 +1,16 @@
+name: fralacticus_chercheur_image
+description: Chercheur et extracteur d'images dans la rom gba Buu's Fury
+version: 1.0.0
+homepage: https://www.fralacticus.fr
+
+environment:
+  sdk: '>=2.17.3 <3.0.0'
+
+dependencies:
+  path: ^1.8.2
+  collection: ^1.16.0
+  interact: ^2.1.1
+  tint: ^2.0.0
+
+dev_dependencies:
+  lints: ^2.0.0
