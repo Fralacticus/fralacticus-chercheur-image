@@ -90,9 +90,9 @@ class MapSize{
     return "decomp-" + typeTuile + "-" + "dim_" + dim.toString() + "-i_" + indice.toString().padLeft(pad,"0") +  "-adr_" + imagesRom[indice].adresse.toRadixString(16).padLeft(6, "0") + ".txt";
   }
 
-  String creerNomFichieBitmap(int indice, int width, int height){
+  String creerNomFichieBitmap(int indice, int width, int height, String nameGenrePix){
     int pad = (imagesRom.length-1).toString().length;
-    return typeTuile + "-" + "dim_" + dim.toString() + "(${width}x${height})" +"-i_" + indice.toString().padLeft(pad,"0") +  "-adr_" + imagesRom[indice].adresse.toRadixString(16).padLeft(6, "0") + ".bmp";
+    return typeTuile + "-i_" + indice.toString().padLeft(pad,"0") + "-adr_" + imagesRom[indice].adresse.toRadixString(16).padLeft(6, "0") + "-" +"dim_" + dim.toString() + "(${width}x${height})" +"-"+ nameGenrePix +".bmp";
   }
 }
 

@@ -7,7 +7,8 @@ import "outils.dart";
 enum GenrePix{
   avecLignes,
   dejaEncode,
-  avecChunks
+  avecChunks,
+  sansLignes;
 }
 
 class Bitmap{
@@ -56,6 +57,7 @@ class Bitmap{
     calculerFileSize();
 
     switch(genrePix){
+      case GenrePix.sansLignes : encoderPixelArray_sansLignes(inputPix as List<int>, Width);break;
       case GenrePix.avecLignes : encoderPixelArray_avecLignes(inputPix as List<List<int>>);break;
       case GenrePix.dejaEncode : encodePixelArray_dejaEncode(inputPix as List<int>);break;
       case GenrePix.avecChunks: encodePixelArray_avecChunks(inputPix as List<int>);break;
@@ -145,6 +147,16 @@ class Bitmap{
     ColorTable = [];
     for (List<int> rgbCoul in pal){
       ColorTable.addAll(rgbCoul.reversed.toList() + [0]);
+    }
+  }
+
+  void encoderPixelArray_sansLignes(List<int> octets, int largeur){
+    PixelArray.clear();
+    List<List<int>> lignes = octets.slices(largeur).toList();
+    lignes = lignes.reversed.toList();
+    int nbPad = rowSize - Width;
+    for(List<int> ligne in lignes){
+      PixelArray.addAll(ligne + List.filled(nbPad, 0));
     }
   }
 

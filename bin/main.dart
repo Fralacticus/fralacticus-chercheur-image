@@ -171,6 +171,7 @@ void actionCreerBitmap(bool rechercheEstMemoire){
   Directory(Global.nomDossierImages).createSync();
 
   print("- Création et écriture des bitmap : ");
+  List<bmp.GenrePix> listeGenrePix = [bmp.GenrePix.sansLignes, bmp.GenrePix.avecChunks];
   for(int i = 0; i < Global.listeMap.length; i++) {
     MapSize mapSize = Global.listeMap[i];
     String cheminDecomp = path.join(Global.nomDossierDecomp, mapSize.dim.toString());
@@ -183,19 +184,30 @@ void actionCreerBitmap(bool rechercheEstMemoire){
 
       loopSize:
       for(int s = 0; s < mapSize.sizes.length; s++){
-        Size size = mapSize.sizes[s];
-        late bmp.Bitmap bitmap;
 
-        try{
-          bitmap = bmp.Bitmap(inputPix: octets, pal: mapSize.typeTuile, Width: size.width, Height: size.height, genrePix: bmp.GenrePix.avecChunks, estPhotoshop: false);
-        }catch(e){
-          print(e);
-          continue loopSize;
+        for(var legenrePix in listeGenrePix) {
+          Size size = mapSize.sizes[s];
+          late bmp.Bitmap bitmap;
+
+          try {
+            bitmap = bmp.Bitmap(inputPix: octets,
+                pal: mapSize.typeTuile,
+                Width: size.width,
+                Height: size.height,
+                genrePix: legenrePix,
+                estPhotoshop: false);
+          } catch (e) {
+            print(e);
+            continue loopSize;
+          }
+
+          List<int> bmpOctets = bitmap.bmpOctets;
+
+          String nomFichierBitmap = mapSize.creerNomFichieBitmap(
+              j, size.width, size.height, legenrePix.name);
+          File(path.join(cheminImages, nomFichierBitmap)).writeAsBytesSync(
+              bmpOctets);
         }
-
-        List<int> bmpOctets = bitmap.bmpOctets;
-        String nomFichierBitmap = mapSize.creerNomFichieBitmap(j, size.width, size.height);
-        File(path.join(cheminImages, nomFichierBitmap)).writeAsBytesSync(bmpOctets);
       }
 
     }
