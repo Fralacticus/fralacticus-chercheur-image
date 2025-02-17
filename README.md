@@ -1,36 +1,37 @@
 # Fralacticus Chercheur Image
 
 Ce programme permet d'extraire (ripper) toutes les images aussi bien sprites que backgrounds du jeu DBZ Buu's Fury au format bitmap indexé avec les bonnes palettes.
+> Système d'exploitation : Windows 10 ou supérieur  
+> Espace disque libre nécessaire : 150 mo
+
 
 ![](assets/2022-09-18-19-16-32-image.png)
 
-# Préparation
 
-Système d'exploitation : Windows 10 ou supérieur
-
-Espace disque libre nécessaire : 150 mo
-
-## Installation
-
+## 1. Installation
+### Depuis le code source
 1. Installer le sdk de Dart (version minimale 2.17.3) et l'ajouter aux variables d'environnements : [Get the Dart SDK | Dart](https://dart.dev/get-dart)
 
 2. Ouvrir une console de commandes à la racine du projet
 
 3. Entrer la commande : `dart pub get`
 
-## Placement de la rom du jeu
+### Depuis l'exécutable Windows
+[Télécharger l'archive](https://github.com/Fralacticus/fralacticus-chercheur-image/releases/) de la section release, puis décompressez-la.
+
+## 2. Placement de la rom du jeu
 
 Votre propre rom doit être placée dans le dossier existant **./Sources** avec le nom **buus_fury.gba**
 
-# Exécution et utilisation
-
-## Lancement
-
+## 3. Lancement 
+## Depuis le code source
 1. Ouvrir une console de commandes à la racine du projet
 
 2. Entrer la commande : `dart run ./bin/main.dart ./Sources/buus_fury.gba`
+## Depuis l'exécutable Windows
+Double-cliquez sur `fralacticus_chercheur_image.exe`
 
-## Utilisation
+## 4. Utilisation
 
 Pour obtenir toutes les images du jeu, il faut lancer dans l'ordre les 3 opérations du menu :  
 
@@ -44,7 +45,7 @@ Entre chaque opération, il est possible d'attendre ou fermer le programme sans 
 
 En cas de problème ou interruption pendant le déroulement d'une opération, il suffit de la relancer sans suppression manuelle d'un quelconque fichier généré.
 
-## Exploitation des résultats
+## => Exploitation des résultats
 
 ### Organisation et nommage
 
