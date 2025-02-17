@@ -24,11 +24,11 @@ Ce programme permet d'extraire (ripper) toutes les images aussi bien sprites que
 Votre propre rom doit être placée dans le dossier existant **./Sources** avec le nom **buus_fury.gba**
 
 ## 3. Lancement 
-## Depuis le code source
+### Depuis le code source
 1. Ouvrir une console de commandes à la racine du projet
 
 2. Entrer la commande : `dart run ./bin/main.dart ./Sources/buus_fury.gba`
-## Depuis l'exécutable Windows
+### Depuis l'exécutable Windows
 Double-cliquez sur `fralacticus_chercheur_image.exe`
 
 ## 4. Utilisation
